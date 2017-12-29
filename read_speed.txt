@@ -1,0 +1,5 @@
+PRATA C++  my read speed
+
+DATA 		Start	End		Total_read
+01.10.17	207		297		90
+02.10.17	297

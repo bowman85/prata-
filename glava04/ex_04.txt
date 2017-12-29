@@ -1,0 +1,5 @@
+Всем привет, хочу обраться с таким вопросом. Для нашего проекта сельскохозяйственного дрона мы использовали QGroundControl, но его интерфейс  слишком избыточен и сложен для рядового человека-колхозника. Хочу спросить у вас совета, с чего лучше всего начать и как двигаться, чтобы взять из QGC только нужный функционал и прикрепить его примерно к такому интерфейсу
+
+Hello everyone, I want to ask with this question. For our project agricultural drone we used QGroundControl, but its interface is too excessive and complex for ordinary people-farmers. I want to ask you advice where best to start and how to move to take from QGC only the desired functions and attach it around to this interface 
+https://yadi.sk/i/KSvwCMng3PJ636
+What should I study and in what direction to move?

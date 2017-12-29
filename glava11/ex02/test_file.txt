@@ -1,0 +1,53 @@
+0 ) (x,y) = (0, 0)
+1 ) (x,y) = (31.7208, -14.7916)
+2 ) (x,y) = (23.2535, -48.752)
+3 ) (x,y) = (50.4536, -26.7258)
+4 ) (x,y) = (25.7049, -51.4745)
+5 ) (x,y) = (-3.31144, -71.0463)
+6 ) (x,y) = (-35.2855, -56.8105)
+7 ) (x,y) = (-23.3148, -89.6997)
+8 ) (x,y) = (-58.1231, -93.3582)
+9 ) (x,y) = (-72.9147, -125.079)
+10 ) (x,y) = (-92.4865, -154.095)
+After 11 steps, the subject has the following location:
+(x,y) = (-112.562, -182.766)
+(m,a) = (214.647, -121.628)
+or
+(m,a) = (214.647, -121.628)
+Average outward distance per step = 19.5134
+Enter target distance (q to quit) : 0 ) (x,y) = (0, 0)
+1 ) (x,y) = (1.43347, 3.73432)
+2 ) (x,y) = (-2.56409, 3.87392)
+After 3 steps, the subject has the following location:
+(x,y) = (-6.56409, 3.87392)
+(m,a) = (7.62198, 149.452)
+or
+(m,a) = (7.62198, 149.452)
+Average outward distance per step = 2.54066
+Enter target distance (q to quit) : 0 ) (x,y) = (0, 0)
+1 ) (x,y) = (-1.36808, -3.75877)
+After 2 steps, the subject has the following location:
+(x,y) = (2.55843, -4.52201)
+(m,a) = (5.19558, -60.5)
+or
+(m,a) = (5.19558, -60.5)
+Average outward distance per step = 2.59779
+Enter target distance (q to quit) : 0 ) (x,y) = (0, 0)
+1 ) (x,y) = (3.59518, 1.75348)
+2 ) (x,y) = (-0.331333, 2.51672)
+3 ) (x,y) = (-1.16298, -1.39587)
+After 4 steps, the subject has the following location:
+(x,y) = (-5.13316, -0.908392)
+(m,a) = (5.21292, -169.965)
+or
+(m,a) = (5.21292, -169.965)
+Average outward distance per step = 1.30323
+Enter target distance (q to quit) : 0 ) (x,y) = (0, 0)
+1 ) (x,y) = (-3.39219, 2.11968)
+After 2 steps, the subject has the following location:
+(x,y) = (-7.07421, 3.6826)
+(m,a) = (7.97534, 152.5)
+or
+(m,a) = (7.97534, 152.5)
+Average outward distance per step = 3.98767
+Enter target distance (q to quit) : 
