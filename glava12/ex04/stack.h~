@@ -23,7 +23,6 @@ class	Stack
 		
 		bool pop (Item & item) ;
 		Stack & operator=(const Stack & st) ;
-		void show () const ;
 
 };
 
