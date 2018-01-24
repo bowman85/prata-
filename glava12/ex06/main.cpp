@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "queue.h"
+#include "cstdio"
 
 const int MIN_PER_HR = 60 ;
 
@@ -67,18 +68,25 @@ int main()
 					temp.set(cycle);
 					
 					if (line01.isfull()){
-						line02.enqueue(temp);						
+						printf("New man in queue 02\n") ;
+						line02.enqueue(temp);									
 					} else if (line02.isfull()){
+						printf("New man in queue 01\n") ;
 						line01.enqueue(temp);						
 					} else if (line01.queuecount()	>= line02.queuecount() ) {
+						printf("New man in queue 02\n") ;
 						line02.enqueue(temp);
 					} else {
+						printf("New man in queue 01\n") ;
 						line01.enqueue(temp);
 					}
 									
 					//line01.enqueue(temp);
 					//line02.enqueue(temp);
+					
 				}
+				printf("\tline01_count:\t %5d\n", line01.queuecount() ) ;
+				printf("\tline02_count:\t %5d\n", line02.queuecount() ) ;
 			}
 			
 			
@@ -109,7 +117,7 @@ int main()
 			sum_line +=line01.queuecount();
 			
 			
-			
+			/* * /
 			// line02
 			if (wait_time02 <= 0 && !line02.isempty()){
 				line02.dequeue(temp);
@@ -123,7 +131,7 @@ int main()
 			}
 			
 			sum_line +=line02.queuecount();
-			
+			/* */
 			
 		}
 		

@@ -1,5 +1,6 @@
 #include "queue.h"
 #include <cstdlib>
+#include "cstdio"
 
 Queue::Queue(int qs) : qsize(qs){
 
@@ -75,8 +76,10 @@ bool Queue::dequeue(Item &item){
 
 void Customer::set (long when){
 
-	processtime = std::rand() % 3 + 1 ;
+	processtime = std::rand() % 4 + 1 ;
 	arrive = when ;
+	printf("processtime:\t %5d \n" , processtime) ;
+	printf("arrive:\t\t %5ld \n", arrive) ;
 }
 
 
