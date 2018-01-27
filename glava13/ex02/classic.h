@@ -7,7 +7,7 @@ class Classic : public Cd
 {
 	
 	private:
-		char _best[50] ;
+		char *_best ;
 		
 	public:
 		Classic( const char * best_comp, const char * group, const char * albom, int compo_val, double time_play) ;
@@ -25,7 +25,10 @@ class Classic : public Cd
 Classic::Classic(const char * best_comp, const char * group, const char * albom, int compo_val, double time_play) 
 : Cd ( group, albom, compo_val, time_play) 
 {
-	strncpy ( _best , best_comp, 50 ) ;
+	int len = (strlen( best_comp) +1 ) ;
+	std::cout << "LEN = " << len << "\n" ;
+	_best = new char [len] ;
+	strcpy ( _best , best_comp ) ;
 }
 
 /*
@@ -41,25 +44,40 @@ Classic::Classic( const Classic & cl)
 Classic::Classic() 
 : Cd ()
 {
-	strcpy ( _best, "None" ) ;
+	_best = new char [(strlen( "NONE") +1)] ;
+	strcpy ( _best , "NONE" ) ;
 }
 
 
 Classic::~Classic() 
 {
-		
+	delete [] _best ;
 }
 
 
 Classic & Classic::operator= (const Classic &cl) 
 {
+	using namespace std ;
+	
 	if (this == &cl ){
 		return *this ;
 	}
 	
+	
+	if ( _best != nullptr ){
+		cout << "_best != nullptr" << endl ;
+		delete [] _best ;
+	}
+	
+	_best = new char [(strlen( cl._best) +1 )] ;
+	strcpy ( _best , cl._best) ;
+	
+	//_best = new char (sizeof( cl._best) +1 ) ;
+	//strcpy ( _best , cl._best) ;
+	
 	Cd::operator= (cl) ;
 	
-	strncpy ( _best , cl._best , 50 ) ;
+
 	return *this;
 }
 

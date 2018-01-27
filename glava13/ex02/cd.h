@@ -9,8 +9,8 @@
 class Cd {
 	
 	private:
-		char performers[50];
-		char label[20];
+		char * performers;
+		char * label;
 		int selections;
 		double playtime;
 	public:
@@ -31,8 +31,13 @@ class Cd {
 
 Cd::Cd(const char *s1, const char * s2, int n , double x) 
 {
-	strncpy ( performers , s1, 50 ) ;
-	strncpy ( label , s2, 20 ) ;
+	
+	performers = new char ( strlen (s1) + 1) ;
+	strcpy ( performers , s1 ) ;
+	
+	//strncpy ( label , s2, 20 ) ;
+	label = new char ( strlen (s2) + 1) ;
+	strcpy ( label , s2 ) ;
 	
 	selections = n ;
 	playtime = x ;
@@ -42,16 +47,26 @@ Cd::Cd(const char *s1, const char * s2, int n , double x)
 
 Cd::Cd (const Cd & d) 
 {
-	strncpy ( performers , d.performers , 50 ) ;
-	strncpy ( label , d.label , 20 ) ;	
+	performers = new char ( strlen (d.performers) + 1) ;
+	strcpy ( performers , d.performers ) ;
+	label = new char ( strlen (d.label) + 1) ;
+	strcpy ( label , d.label ) ;
+	
+	//strncpy ( performers , d.performers , 50 ) ;
+	//strncpy ( label , d.label , 20 ) ;	
 	selections = d.selections ;
 	playtime = d.playtime ;		
 }
 
 Cd::Cd()
 {
-	strcpy ( performers, "None" );
-	strcpy ( label, "Noname" );
+	performers = new char ( strlen ("None") + 1) ;
+	strcpy ( performers , "None" ) ;
+	
+	label = new char ( strlen ("None") + 1) ;
+	strcpy ( label , "None" ) ;
+	//strcpy ( performers, "None" );
+	//strcpy ( label, "Noname" );
 	selections = 0 ;
 	playtime = 0.0 ;
 		
@@ -59,6 +74,8 @@ Cd::Cd()
 
 Cd::~Cd()
 {
+	delete performers ;
+	delete label ;
 		
 }
 
@@ -68,8 +85,16 @@ Cd & Cd::operator=(const Cd &d )
 		return * this ;
 	}
 	
-	strncpy ( performers , d.performers , 50 ) ;
-	strncpy ( label , d.label , 20 ) ;	
+	delete performers ;
+	delete label ;
+	performers = new char ( strlen (d.performers) + 1) ;
+	strcpy ( performers , d.performers ) ;
+	label = new char ( strlen (d.label) + 1) ;
+	strcpy ( label , d.label ) ;
+	
+	
+	//strncpy ( performers , d.performers , 50 ) ;
+	//strncpy ( label , d.label , 20 ) ;	
 	selections = d.selections ;
 	playtime = d.playtime ;	
 
