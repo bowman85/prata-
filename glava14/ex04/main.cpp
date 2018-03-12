@@ -1,0 +1,68 @@
+#include <iostream>
+#include <cstring>
+#include "ex04.h"
+
+
+
+
+const int SIZE = 5 ;
+
+int main(void)
+{
+    using std::cout ;
+    using std::cin  ;
+    using std::endl ;
+    using std::strchr;
+    
+    Person *pers[SIZE] ;
+    
+    int count ;
+    
+    for ( count = 0 ; count < SIZE ; count++){
+        char choice;
+        cout << "  " << count+1 << "-"<< SIZE << endl ;
+        cout << "  Enter the employee category:\n";
+        cout << "\tp - poker_player\n" ;
+        cout << "\tg - gunslinger\n" ;
+        cout << "\tb - bad_guy\n" ;
+        cout << "\tq - quit\n" ;
+        
+        cin>> choice ;
+        while (strchr("pgbq", choice) == NULL){
+            cout <<"Please, enter p, g, b or q: " ;
+            cin >> choice ;            
+        }
+        
+        if (choice == 'q'){
+            break ;
+        }
+        switch(choice){
+            case 'p' : pers[count] = new PokerPlayer ; 
+                break;
+            case 'g' : pers[count] = new Gunslinger ;
+                break;
+            case 'b' : pers[count] = new BadDude ;
+                break;
+        }
+        
+        cin.get() ;
+        pers[count]->Set() ; 
+    
+    }
+    
+    cout <<"\nHere is your staff:\n";
+    int i;
+    for (i=0; i< SIZE; i++){
+        cout << endl;
+        pers[i]->Show();
+    }
+    
+    for (i=0; i< SIZE; i++){
+        delete pers[i];
+    }
+
+
+    cout << "Good bye!\n" ;
+return 0;
+}
+

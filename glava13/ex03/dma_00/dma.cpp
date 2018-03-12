@@ -2,39 +2,7 @@
 #include <cstring>
 
 
-
-abkDMA::abkDMA ( const char *skill ) 
-{
-		baseSkill = new char [ std::strlen(skill) +1 ] ;
-		strcpy ( baseSkill , skill) ;	
-}
-
-abkDMA::abkDMA ( const abkDMA & ab ) 
-{
-		baseSkill = new char [ std::strlen(ab.baseSkill) +1 ] ;
-		strcpy ( baseSkill , ab.baseSkill) ;	
-		
-}
-
-abkDMA::~abkDMA()
-{
-		delete [] baseSkill ;
-}
-		
-std::ostream & operator << (std::ostream & os , const abkDMA & as ) 
-{
-		os << "baseSkill:\t " << as.baseSkill << std::endl ;
-}
-
-
-
-
-
-
-//  baseDMA
-
-baseDMA::baseDMA(const char *l, int r, const char *new_skill )
-: abkDMA( new_skill) 
+baseDMA::baseDMA(const char *l, int r)
 {
 	label = new char [std::strlen(l) + 1] ;
 	std::strcpy (label , l) ;
@@ -44,7 +12,6 @@ baseDMA::baseDMA(const char *l, int r, const char *new_skill )
 
 
 baseDMA::baseDMA(const baseDMA &rs ) 
-: abkDMA( rs ) 
 {
 	label = new char [std::strlen(rs.label) + 1] ;
 	std::strcpy( label, rs.label );
@@ -63,11 +30,6 @@ baseDMA & baseDMA::operator= (const baseDMA & rs )
 	if (this == &rs ){
 		return *this ;
 	}
-
-	char mass[] = "base Skill =====  operator=  in baseDMA class " ;
-	delete [] baseSkill; 
-	baseSkill = new char [std::strlen(mass) +1 ] ;
-	strcpy(baseSkill, mass ) ;
 	
 	delete [] label ;
 	label = new char [std::strlen(rs.label) + 1] ;
@@ -80,26 +42,12 @@ baseDMA & baseDMA::operator= (const baseDMA & rs )
 
 std::ostream & operator<<(std::ostream &os, const baseDMA & rs)
 {
-	os << ( const abkDMA & ) rs ;
-	os << "Label:\t\t " << rs.label << std::endl ;
-	os << "Rating:\t\t " << rs.rating<< std::endl ;
+	os << "Label:\t " << rs.label << std::endl ;
+	os << "Rating:\t " << rs.rating<< std::endl ;
 	return os ;
 	
 }
 
-void baseDMA::showInfo ( ) const 
-{
-//	std::cout << ( const abkDMA & ) 
-		std::cout << "\nThis is baseDMA::showInfo funct () \n" ;
-		std::cout << *this; 
-
-}
-
-/* -- */
-
-
-//  lackDMA
-/*
 lackDMA::lackDMA (const char * c, const char *l , int r )
 : baseDMA (l, r)
 {
@@ -107,35 +55,13 @@ lackDMA::lackDMA (const char * c, const char *l , int r )
 	color[39] = '\0' ;
 	
 }
-*/
-
-lackDMA::lackDMA (const char * c, const char *l , int r , const char * skill )
-: baseDMA (l, r, skill)
-{
-	std::strncpy(color, c, 39);
-	color[39] = '\0' ;
-	
-}
-
-
-void  lackDMA::showInfo () const 
-{
-		std::cout << "\nThis is lackDMA::showInfo funct () \n" ;
-		std::cout << *this ;
-
-}
-
-
 
 std::ostream & operator << (std::ostream & os, const lackDMA & ls)
 {
 	os << (const baseDMA & ) ls ;
-	os << "Color:\t\t " << ls.color << std::endl ;
+	os << "Color:\t " << ls.color << std::endl ;
 	return os; 
 }
-
-
-/// hasDMA
 
 hasDMA::hasDMA (const char *s , const char *l , int r)
 : baseDMA (l, r) 
@@ -181,17 +107,15 @@ hasDMA & hasDMA::operator= (const hasDMA & hs)
 std::ostream &  operator<< (std::ostream & os , const hasDMA& hs ) 
 {
 	os << ( const baseDMA & ) hs ;
-	os << "Style:\t\t " << hs.style << std::endl  ; 
+	os << "Style: " << hs.style << std::endl ; 
 	return os ;
 	
 }
 
-void  hasDMA::showInfo () const 
-{
-		std::cout << "\nThis is hasDMA::showInfo funct () \n" ;
-		std::cout << *this << std::endl;
 
-}
+
+
+
 
 
 

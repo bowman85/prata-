@@ -3,54 +3,34 @@
 
 #include <iostream>
 
-class abkDMA
-{
-	//private:
-	protected:
-		 char * baseSkill ;
-		 
-	public:	 
-		 abkDMA ( const char *skill = "Nothing" ) ;
-		 abkDMA ( const abkDMA & ab ) ;
-		 virtual ~abkDMA() ;
-		
-		 friend std::ostream & operator << (std::ostream & os , const abkDMA & as ) ;
-		 virtual  void showInfo ( void ) const = 0 ;
-		
 
-};
-
-class baseDMA : public abkDMA
+class baseDMA
 {
 	private:
 		char * label;
 		int rating;
 	
 	public:
-		baseDMA (const char * l = "null" , int r = 0 , const char *new_skill = "New skill" );
+		baseDMA (const char * l = "null" , int r = 0);
 		baseDMA (const baseDMA & rs);
 		virtual ~baseDMA() ;
 		baseDMA & operator= (const baseDMA & rs) ;
 
 		friend std::ostream & operator << (std::ostream & os, const baseDMA & rs );
-		virtual  void showInfo (  ) const		 ;
 };
 
 
-
-class  lackDMA : public baseDMA 
+class  lackDMA : public baseDMA
 {
 	private:
 		enum { COL_LEN = 40 } ;
 		char color[COL_LEN] ;
 	public:
-//		lackDMA (const char * c = "blank", const char * l = "null", int r = 0 ) ;
-		lackDMA (const char * c = "blank", const char * l = "null", int r = 0 , const char * skill = "Some LackSkill") ;
+		lackDMA (const char * c = "blank", const char * l = "null", int r = 0 ) ;
 		lackDMA (const char * c, const baseDMA & rs);
 		friend std::ostream & operator<<(std::ostream & os, const lackDMA & rs) ;
-		virtual  void showInfo ( void ) const		 ;		
+		
 };
-
 
 
 class hasDMA: public baseDMA
@@ -66,7 +46,7 @@ class hasDMA: public baseDMA
 		hasDMA & operator= (const hasDMA & hs) ;
 		
 		friend std::ostream & operator<<( std::ostream & os, const hasDMA & hs) ;
-		virtual  void showInfo ( void ) const		 ;
+
 };
 
 

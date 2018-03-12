@@ -64,7 +64,7 @@ baseDMA & baseDMA::operator= (const baseDMA & rs )
 		return *this ;
 	}
 
-	char mass[] = "base Skill =====  operator=  in baseDMA class " ;
+	char mass = "base Skill =====  operator=  in baseDMA class " ;
 	delete [] baseSkill; 
 	baseSkill = new char [std::strlen(mass) +1 ] ;
 	strcpy(baseSkill, mass ) ;

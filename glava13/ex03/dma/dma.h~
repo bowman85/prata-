@@ -5,8 +5,7 @@
 
 class abkDMA
 {
-	//private:
-	protected:
+	private:
 		 char * baseSkill ;
 		 
 	public:	 
